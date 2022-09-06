@@ -6,10 +6,10 @@ export default function Home() {
   const [data, setdata] = useState([]);
 
   useEffect(() => {
-      axios
-        .get(
-          "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=ce04abf35fd24923ad803b12003dfda3"
-        )
+      axios({
+        url: "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=7450fd27820c4a7293ce4c684e42731d",
+        method: 'get'
+      })
         .then((response) => {
           setdata(response.data.articles);
         
